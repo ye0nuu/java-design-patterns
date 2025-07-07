@@ -1,4 +1,8 @@
-package _01_creational_patterns._02_factorymethod;
+package _01_creational_patterns._02_factorymethod.ship;
+
+import _01_creational_patterns._03_abstract_factory.Wheel;
+import _01_creational_patterns._03_abstract_factory.Anchor;
+
 
 public class Ship {
 
@@ -23,7 +27,7 @@ public class Ship {
     public String getLogo() {
         return logo;
     }
-    public String setLogo(String logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
 
@@ -45,7 +49,7 @@ public class Ship {
     public Anchor getAnchor() {
         return anchor;
     }
-    public void setAnchor(Anchor anchol) {
+    public void setAnchor(Anchor anchor) {
         this.anchor = anchor;
     }
 }
