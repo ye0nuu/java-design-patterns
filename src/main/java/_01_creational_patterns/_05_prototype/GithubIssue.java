@@ -3,6 +3,9 @@ package _01_creational_patterns._05_prototype;
 import java.util.Objects;
 
 public class GithubIssue implements Cloneable {
+
+    // 이슈 정보 (id, 제목, 위 저장소 객체)
+
     private int id;
     private String title;
     private GithubRepository repository;
@@ -28,13 +31,15 @@ public class GithubIssue implements Cloneable {
                 this.getId());
     }
 
+    // clone() 오버라이드
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Object o = super.clone();
+        // repository 새로 만들어서 값 복사 -> 깊은 복사하기 위해 레포 생성
         GithubRepository repository = new GithubRepository();
         repository.setUser(this.repository.getUser());
         repository.setName(this.repository.getName());
 
+        // 기존 저장소 정보 새 저장소에 복사
         GithubIssue gi = new GithubIssue(repository);
         gi.setId(this.id);
         gi.setTitle(this.title);
@@ -54,6 +59,7 @@ public class GithubIssue implements Cloneable {
 
     @Override
     public int hashCode() {
+        // 값 조합해서 고유 숫자 생성
         return Objects.hash(id, title, repository);
     }
 }
