@@ -6,8 +6,10 @@ public class App {
     private static boolean enabledTrimming = true;
 
     public static void main(String[] args) {
+        // 기본 구현체 생성 : 콘솔에 단순 출력
         CommentService commentService = new DefaultCommentService();
 
+        // 동적 조합 - 필요한 기능만 선택해서 조합
         if (enabledSpamFilter) {
             commentService = new SpamFilteringCommentDecorator(commentService);
         }
@@ -15,6 +17,10 @@ public class App {
         if (enabledTrimming) {
             commentService = new TrimmingCommentDecorator(commentService);
         }
+
+//        commentService = new TrimmingCommentDecorator(
+//                new SpamFilteringCommentDecorator(
+//                        new DefaultCommentService()));
 
         Client client = new Client(commentService);
         client.writeComment("오징어게임");
