@@ -16,6 +16,7 @@ public class EmailSender {
         this.emailSettings = emailSettings;
     }
 
+    // Sender에서 세팅정보, 메시지 담아서 메일 전송
 //    @param emailMessage
     public void sendEmail(EmailMessage emailMessage) {
         Properties properties = System.getProperties();
