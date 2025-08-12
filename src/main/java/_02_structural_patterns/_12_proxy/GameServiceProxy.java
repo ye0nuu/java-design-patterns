@@ -6,8 +6,10 @@ public class GameServiceProxy implements GameService {
 
     @Override
     public void startGame() {
+        // 수행시간 측정
         long before = System.currentTimeMillis();
 
+        // 지연초기화
         if (this.gameService == null) {
             this.gameService = new DefaultGameService();
         }
