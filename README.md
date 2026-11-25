@@ -47,4 +47,5 @@ GoF 디자인 패턴 23가지를 Java 예제로 직접 구현하며 정리한 �
 
 ## 실행
 
-IntelliJ에서 `src/main/java`를 소스 루트로 열고, 각 패턴 폴더의 `App` 또는 `Client`의 `main`을 실행합니다. 퍼사드 예제는 `lib/`의 jar(`javax.mail` 등)를 라이브러리로 추가해야 합니다.
+- IntelliJ에서 `src/main/java`를 소스 루트로 열고, 각 패턴 폴더의 `App` 또는 `Client`의 `main`을 실행
+- 퍼사드 예제는 `lib/`의 jar(`javax.mail` 등)를 라이브러리로 추가해야 함
